@@ -28,4 +28,5 @@ export class AppComponent {
   apellidoEmpleado : string = ''
   cargoEmpleado : string = ''
   sueldoEmpleado : number = 0
+  index: number = 0
 }

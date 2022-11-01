@@ -8,13 +8,13 @@ export class ServiciosEmpleadosService {
 
   constructor() { }
 
-  usuarios : Empleados[] = [
-    new Empleados('Jesus', 'Gonzalez', 'Director', 1200),
-    new Empleados('Maneul', 'Gonzalez', 'Coordinador', 3500),
-    new Empleados('Yoniris', 'Gonzalez', 'Presidenta', 1800)
-  ]
+  usuarios : Empleados[] = []
 
   AgregaEmpleado(empleado: Empleados){
     this.usuarios.push(empleado)
+  }
+
+  AlertaNuevoEmpleado(mensaje: string){
+    alert(mensaje)
   }
 }

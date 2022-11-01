@@ -1,1 +1,11 @@
-<p>acciones-usuarios works!</p>
+<p>Acciones de uusarios</p>
+
+<form>
+    Nombre: <input type="text" name="nombre" [(ngModel)]="nombreEmpleado">
+    Apellido: <input type="text" name="apellido" [(ngModel)]="apellidoEmpleado">
+    Cargo: <input type="text" name="cargo" [(ngModel)]="cargoEmpleado">
+    Sueldo: <input type="number" name="sueldo" [(ngModel)]="sueldoEmpleado">
+    <button type="submit">Realizar Accion</button>
+</form>
+
+<button (click)="Volverhome()">Volver al inicio</button>

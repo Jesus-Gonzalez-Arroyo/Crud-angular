@@ -1,0 +1,57 @@
+<header>
+    <h1>{{title}}</h1>
+</header>
+
+<body>
+
+<div>
+    <div>
+        <div>
+            <h2>Agregar empleados</h2>
+        </div>
+        <form>
+            Nombre: <input type="text" name="nombre" [(ngModel)]="nombreEmpleado">
+            Apellido: <input type="text" name="apellido" [(ngModel)]="apellidoEmpleado">
+            Cargo: <input type="text" name="cargo" [(ngModel)]="cargoEmpleado">
+            Sueldo: <input type="number" name="sueldo" [(ngModel)]="sueldoEmpleado">
+            <button type="submit" (click)="AgregarEmpleado()">Agregar Empleados</button>
+        </form>
+    </div>
+
+    <div>
+        <table border="1">
+            <td>
+                <p>Id</p>
+            </td>
+            <td>
+                <p>Nombre</p>
+            </td>
+            <td>
+                <p>Apellido</p>
+            </td>
+            <td>
+                <p>Cargo</p>
+            </td>
+            <td>
+                <p>Sueldo</p>
+            </td>
+            <td>
+                <p>Acciones</p>
+            </td>
+            <tr *ngFor="let usuario of usuarios; let i = 'index'">
+                <td>{{i + 1}}</td>
+                <td>{{usuario.nombre}}</td> 
+                <td>{{usuario.apellido}}</td>
+                <td>{{usuario.cargo}}</td>
+                <td>{{usuario.sueldo}}</td>
+                <td>
+                    <!-- Se pasa como parametro el id de cada usuario -->
+                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]">Actualizar</a> 
+                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]">Eliminar</a> 
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
