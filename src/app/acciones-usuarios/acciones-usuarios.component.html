@@ -5,7 +5,7 @@
     Apellido: <input type="text" name="apellido" [(ngModel)]="apellidoEmpleado">
     Cargo: <input type="text" name="cargo" [(ngModel)]="cargoEmpleado">
     Sueldo: <input type="number" name="sueldo" [(ngModel)]="sueldoEmpleado">
-    <button type="submit">Realizar Accion</button>
+    <button type="submit" (click)="AccionEmpleados()">Realizar Accion</button>
 </form>
 
 <button (click)="Volverhome()">Volver al inicio</button>

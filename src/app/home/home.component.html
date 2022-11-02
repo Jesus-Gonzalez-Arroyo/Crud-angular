@@ -7,7 +7,7 @@
 <div class="flex-home">
     <div class="container-form">
         <div>
-            <h2 class="h2">Agregar empleados</h2>
+            <h2 class="h2">Agregar empleado</h2>
         </div>
         <form class="form">
                 <label>Nombre: </label>
@@ -55,8 +55,8 @@
                 <td>{{usuario.sueldo}}</td>
                 <td>
                     <!-- Se pasa como parametro el id de cada usuario -->
-                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]">Actualizar</a> 
-                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]">Eliminar</a> 
+                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]" [queryParams]="{accion: 1}">Actualizar</a> 
+                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]" [queryParams]="{accion: 2}">Eliminar</a> 
                 </td>
             </tr>
         </table>

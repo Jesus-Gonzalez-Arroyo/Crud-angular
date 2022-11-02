@@ -23,6 +23,11 @@ export class HomeComponent implements OnInit {
     /* Uso de los servicios */
     this.ServicioUsers.AlertaNuevoEmpleado(`Se ha agregado un nuevo usuario con el nombre de ${empleado.nombre}`)
     this.ServicioUsers.AgregaEmpleado(empleado)
+
+    this.nombreEmpleado = ''
+    this.apellidoEmpleado = ''
+    this.cargoEmpleado = ''
+    this.sueldoEmpleado = 0
   }
 
   RutaButtons(){
