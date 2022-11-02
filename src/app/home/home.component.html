@@ -1,25 +1,34 @@
 <header>
-    <h1>{{title}}</h1>
+    <h1 class="title">{{title}}</h1>
 </header>
 
 <body>
 
-<div>
-    <div>
+<div class="flex-home">
+    <div class="container-form">
         <div>
-            <h2>Agregar empleados</h2>
+            <h2 class="h2">Agregar empleados</h2>
         </div>
-        <form>
-            Nombre: <input type="text" name="nombre" [(ngModel)]="nombreEmpleado">
-            Apellido: <input type="text" name="apellido" [(ngModel)]="apellidoEmpleado">
-            Cargo: <input type="text" name="cargo" [(ngModel)]="cargoEmpleado">
-            Sueldo: <input type="number" name="sueldo" [(ngModel)]="sueldoEmpleado">
-            <button type="submit" (click)="AgregarEmpleado()">Agregar Empleados</button>
+        <form class="form">
+                <label>Nombre: </label>
+                <input type="text" name="nombre" [(ngModel)]="nombreEmpleado">
+
+                <label>Apellido: </label>
+                <input type="text" name="apellido" [(ngModel)]="apellidoEmpleado">
+
+                <label>Cargo: </label>
+                <input type="text" name="cargo" [(ngModel)]="cargoEmpleado">
+
+                <label>Sueldo: </label>
+                <input type="number" name="sueldo" [(ngModel)]="sueldoEmpleado">
+
+            <button class="btn-form" type="submit" (click)="AgregarEmpleado()">Agregar</button>
         </form>
     </div>
 
-    <div>
-        <table border="1">
+    <div class="container-tableUsers">
+        <h2 class="h2">Empleados</h2>
+        <table border="1" class="tableUsers">
             <td>
                 <p>Id</p>
             </td>
