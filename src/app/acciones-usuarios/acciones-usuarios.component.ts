@@ -25,6 +25,12 @@ export class AccionesUsuariosComponent implements OnInit {
 
     /* captura del tipo de accion que quiere el usuario por medio de la url */
     this.accion = parseInt(this.Routerparams.snapshot.queryParams['accion'])
+
+    if(this.accion == 1){
+      this.Textboton = 'Actualizar'
+    }else{
+      this.Textboton = 'Eliminar'
+    }
   }
 
   Volverhome(){
@@ -43,7 +49,7 @@ export class AccionesUsuariosComponent implements OnInit {
     }
   }
 
-
+  Textboton: string  = ''
   accion: number = 0
   idEmpleado : number = 0
   nombreEmpleado : string = ''

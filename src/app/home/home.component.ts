@@ -14,25 +14,29 @@ export class HomeComponent implements OnInit {
     this.usuarios = ServicioUsers.usuarios
   }
 
-  title = 'Crud'
-
+  title = 'Crud de Empleados'
   usuarios : Empleados[] = []
 
   AgregarEmpleado(){
-    let empleado = new Empleados(this.nombreEmpleado, this.apellidoEmpleado, this.cargoEmpleado, this.sueldoEmpleado)
-    /* Uso de los servicios */
-    this.ServicioUsers.AlertaNuevoEmpleado(`Se ha agregado un nuevo usuario con el nombre de ${empleado.nombre}`)
-    this.ServicioUsers.AgregaEmpleado(empleado)
+    if(this.nombreEmpleado, this.apellidoEmpleado, this.cargoEmpleado == ''){
+      
+      alert('No se pueden registrar valores vacios')
 
-    this.nombreEmpleado = ''
-    this.apellidoEmpleado = ''
-    this.cargoEmpleado = ''
-    this.sueldoEmpleado = 0
+    } else {
+      
+      let NuevoEmpleado = new Empleados(this.nombreEmpleado, this.apellidoEmpleado, this.cargoEmpleado, this.sueldoEmpleado)
+      /* Uso de los servicios */
+      this.ServicioUsers.AlertaNuevoEmpleado(`Se ha agregado un nuevo usuario con el nombre de ${NuevoEmpleado.nombre}`)
+      this.ServicioUsers.AgregaEmpleado(NuevoEmpleado)
+
+      /* se limpian los campos despues de agregar un empleado */
+      this.nombreEmpleado = ''
+      this.apellidoEmpleado = ''
+      this.cargoEmpleado = ''
+      this.sueldoEmpleado = 0
+    }
   }
 
-  RutaButtons(){
-    this.rutas.navigate(['/accionesUsers'])
-  }
 
   nombreEmpleado : string = ''
   apellidoEmpleado : string = ''

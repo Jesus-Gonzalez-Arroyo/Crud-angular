@@ -1,0 +1,55 @@
+h2{
+    font-family: 'Segoe UI';
+    font-size: 35px;
+    text-align: center;
+}
+
+.form{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.form label{
+    width: 100%;
+    margin: 20px 0 0 0;
+    font-family: 'Segoe UI';
+}
+
+.form input{
+    width: 150px;
+    margin: 0 30px 0 0;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Segoe UI';
+    font-size: 15px;
+}
+
+.btn-form{
+    width: 150px;
+    margin: 30px auto 20px auto;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: block;
+    font-family: 'Segoe UI';
+    font-size: 15px;
+}
+
+.btn-home{
+    width: 150px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    display: block;
+}
+
+.container-form{
+    width: 100%;
+    margin: 25vh auto;
+}

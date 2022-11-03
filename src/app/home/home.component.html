@@ -3,64 +3,62 @@
 </header>
 
 <body>
-
-<div class="flex-home">
-    <div class="container-form">
-        <div>
-            <h2 class="h2">Agregar empleado</h2>
+    <div class="flex-home">
+        <div class="container-form">
+            <div>
+                <h2 class="h2">Agregar empleado</h2>
+            </div>
+            <form class="form">
+                    <label>Nombre: </label>
+                    <input type="text" name="nombre" [(ngModel)]="nombreEmpleado">
+    
+                    <label>Apellido: </label>
+                    <input type="text" name="apellido" [(ngModel)]="apellidoEmpleado">
+    
+                    <label>Cargo: </label>
+                    <input type="text" name="cargo" [(ngModel)]="cargoEmpleado">
+    
+                    <label>Sueldo: </label>
+                    <input type="number" name="sueldo" [(ngModel)]="sueldoEmpleado">
+    
+                <button class="btn-form" type="submit" (click)="AgregarEmpleado()">Agregar</button>
+            </form>
         </div>
-        <form class="form">
-                <label>Nombre: </label>
-                <input type="text" name="nombre" [(ngModel)]="nombreEmpleado">
-
-                <label>Apellido: </label>
-                <input type="text" name="apellido" [(ngModel)]="apellidoEmpleado">
-
-                <label>Cargo: </label>
-                <input type="text" name="cargo" [(ngModel)]="cargoEmpleado">
-
-                <label>Sueldo: </label>
-                <input type="number" name="sueldo" [(ngModel)]="sueldoEmpleado">
-
-            <button class="btn-form" type="submit" (click)="AgregarEmpleado()">Agregar</button>
-        </form>
-    </div>
-
-    <div class="container-tableUsers">
-        <h2 class="h2">Empleados</h2>
-        <table border="1" class="tableUsers">
-            <td>
-                <p>Id</p>
-            </td>
-            <td>
-                <p>Nombre</p>
-            </td>
-            <td>
-                <p>Apellido</p>
-            </td>
-            <td>
-                <p>Cargo</p>
-            </td>
-            <td>
-                <p>Sueldo</p>
-            </td>
-            <td>
-                <p>Acciones</p>
-            </td>
-            <tr *ngFor="let usuario of usuarios; let i = 'index'">
-                <td>{{i + 1}}</td>
-                <td>{{usuario.nombre}}</td> 
-                <td>{{usuario.apellido}}</td>
-                <td>{{usuario.cargo}}</td>
-                <td>{{usuario.sueldo}}</td>
+    
+        <div class="container-tableUsers">
+            <h2 class="h2">Empleados</h2>
+            <table border="1" class="tableUsers">
                 <td>
-                    <!-- Se pasa como parametro el id de cada usuario -->
-                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]" [queryParams]="{accion: 1}">Actualizar</a> 
-                    <a *ngFor="let usuario of usuarios; let i = 'index'" [routerLink]="['/accionesUsers', i]" [queryParams]="{accion: 2}">Eliminar</a> 
+                    <p>Id</p>
                 </td>
-            </tr>
-        </table>
+                <td>
+                    <p>Nombre</p>
+                </td>
+                <td>
+                    <p>Apellido</p>
+                </td>
+                <td>
+                    <p>Cargo</p>
+                </td>
+                <td>
+                    <p>Sueldo</p>
+                </td>
+                <td>
+                    <p>Acciones</p>
+                </td>
+                <tr *ngFor="let usuario of usuarios; let i = 'index'">
+                    <td class="InfoEmple">{{i + 1}}</td>
+                    <td class="InfoEmple">{{usuario.nombre}}</td> 
+                    <td class="InfoEmple">{{usuario.apellido}}</td>
+                    <td class="InfoEmple">{{usuario.cargo}}</td>
+                    <td class="InfoEmple">{{usuario.sueldo}}</td>
+                    <td class="InfoEmple">
+                        <!-- Se pasa como parametro el id de cada usuario -->
+                        <a class="acciones" let i = 'index' [routerLink]="['/accionesUsers', i]" [queryParams]="{accion: 1}">Actualizar</a> 
+                        <a class="acciones Eliminar" let i = 'index' [routerLink]="['/accionesUsers', i]" [queryParams]="{accion: 2}">Eliminar</a> 
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
-
 </body>
